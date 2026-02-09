@@ -6,21 +6,36 @@
 
     <style>
         :root {
-            --primary-red: #E63946;
-            --primary-red-dark: #D62828;
-            --dark-bg: #1D3557;
-            --text-dark: #14213D;
-            --text-gray: #6C757D;
-            --bg-light: #F1FAEE;
+            --primary-blue: #0B7ABD;
+            --primary-blue-dark: #0A5A8F;
+            --primary-blue-light: #1E9AD6;
+            --accent-blue: #3BB5E8;
+            --gradient-blue-start: #0E86C9;
+            --gradient-blue-end: #0B5F96;
+            --dark-blue: #1E293B;
+            --text-dark: #0F172A;
+            --text-gray: #64748B;
+            --bg-light: #F8FAFC;
+            --border-light: #E2E8F0;
             --white: #FFFFFF;
         }
 
         /* All News Header */
         .all-news-header-wrapper {
-            background: var(--dark-bg);
-            padding: 3.5rem 0;
+            background: linear-gradient(135deg, var(--gradient-blue-start) 0%, var(--gradient-blue-end) 100%);
+            padding: 4rem 0 5rem;
             position: relative;
-            border-bottom: 6px solid var(--primary-red);
+            overflow: hidden;
+        }
+
+        .all-news-header-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
 
         .all-news-header-container {
@@ -36,50 +51,51 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.6rem 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
             color: white;
-            font-size: 0.8rem;
-            font-weight: 900;
-            margin-bottom: 2rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        .header-icon-box {
-            width: 90px;
-            height: 90px;
-            background: var(--primary-red);
+        .header-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 1.5rem;
-            box-shadow: 0 8px 30px rgba(230, 57, 70, 0.4);
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .header-title {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 900;
             color: white;
             margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .header-description {
-            font-size: 1.1rem;
-            color: #94A3B8;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
             max-width: 700px;
             margin: 0 auto 2rem;
             line-height: 1.6;
-            font-weight: 600;
         }
 
         /* Search Bar in Header */
         .header-search-wrapper {
-            max-width: 700px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
@@ -88,37 +104,42 @@
             display: flex;
             align-items: center;
             background: white;
-            border: 3px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border-radius: 50px;
+            padding: 0.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .search-icon-header {
+            position: absolute;
+            left: 1.5rem;
+            width: 22px;
+            height: 22px;
+            color: var(--text-gray);
+            pointer-events: none;
         }
 
         .header-search-input {
             flex: 1;
-            padding: 1rem 1.5rem;
+            padding: 0.85rem 1.5rem 0.85rem 3.5rem;
             border: none;
-            font-size: 0.95rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+            border-radius: 50px;
+            font-size: 1rem;
             color: var(--text-dark);
             outline: none;
         }
 
         .header-search-input::placeholder {
             color: var(--text-gray);
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.85rem;
         }
 
         .header-search-btn {
-            padding: 1rem 2.5rem;
-            background: var(--primary-red);
+            padding: 0.85rem 2rem;
+            background: linear-gradient(135deg, var(--gradient-blue-start) 0%, var(--gradient-blue-end) 100%);
             color: white;
             border: none;
-            font-weight: 900;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
@@ -127,24 +148,26 @@
         }
 
         .header-search-btn:hover {
-            background: var(--primary-red-dark);
-            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+            transform: translateX(2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         /* Content Wrapper */
         .all-news-content {
             max-width: 1400px;
-            margin: 4rem auto;
+            margin: -3rem auto 4rem;
             padding: 0 2rem;
+            position: relative;
+            z-index: 10;
         }
 
         /* Filter & Control Panel */
         .control-panel {
             background: white;
+            border-radius: 20px;
             padding: 2rem;
             margin-bottom: 3rem;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            border-left: 6px solid var(--primary-red);
         }
 
         .control-row {
@@ -169,27 +192,10 @@
         }
 
         .filter-label {
-            font-weight: 900;
+            font-weight: 700;
             color: var(--text-dark);
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-size: 0.95rem;
             white-space: nowrap;
-        }
-
-        .filter-number {
-            width: 28px;
-            height: 28px;
-            background: var(--primary-red);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            font-weight: 900;
         }
 
         .category-pills {
@@ -200,14 +206,13 @@
         }
 
         .category-pill {
-            padding: 0.6rem 1.5rem;
-            border: 2px solid var(--text-gray);
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            border: 2px solid var(--border-light);
             background: white;
             color: var(--text-gray);
-            font-weight: 800;
-            font-size: 0.75rem;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 0.85rem;
             cursor: pointer;
             transition: all 0.3s ease;
             text-decoration: none;
@@ -215,15 +220,17 @@
         }
 
         .category-pill:hover {
-            border-color: var(--primary-red);
-            color: var(--primary-red);
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+            background: rgba(11, 122, 189, 0.05);
+            transform: translateY(-2px);
         }
 
         .category-pill.active {
-            background: var(--primary-red);
-            border-color: var(--primary-red);
+            background: linear-gradient(135deg, var(--gradient-blue-start) 0%, var(--gradient-blue-end) 100%);
+            border-color: transparent;
             color: white;
-            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+            box-shadow: 0 4px 15px rgba(11, 122, 189, 0.3);
         }
 
         /* Sort & View Controls */
@@ -231,6 +238,44 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+        }
+
+        .sort-dropdown {
+            position: relative;
+        }
+
+        .sort-select {
+            padding: 0.7rem 2.5rem 0.7rem 1.25rem;
+            border: 2px solid var(--border-light);
+            border-radius: 12px;
+            background: white;
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            appearance: none;
+            transition: all 0.3s ease;
+        }
+
+        .sort-select:hover {
+            border-color: var(--primary-blue);
+        }
+
+        .sort-select:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(11, 122, 189, 0.1);
+        }
+
+        .sort-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            color: var(--text-gray);
+            pointer-events: none;
         }
 
         .view-toggle {
@@ -241,7 +286,8 @@
         .view-btn {
             width: 44px;
             height: 44px;
-            border: 2px solid var(--text-gray);
+            border-radius: 12px;
+            border: 2px solid var(--border-light);
             background: white;
             display: flex;
             align-items: center;
@@ -252,13 +298,14 @@
         }
 
         .view-btn:hover {
-            border-color: var(--primary-red);
-            color: var(--primary-red);
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+            background: rgba(11, 122, 189, 0.05);
         }
 
         .view-btn.active {
-            background: var(--primary-red);
-            border-color: var(--primary-red);
+            background: var(--primary-blue);
+            border-color: var(--primary-blue);
             color: white;
         }
 
@@ -266,21 +313,19 @@
         .results-info {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            justify-content: space-between;
             padding: 1rem 0;
-            border-bottom: 3px solid var(--bg-light);
+            border-bottom: 2px solid var(--border-light);
         }
 
         .results-text {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-gray);
-            font-weight: 700;
-            letter-spacing: 0.5px;
         }
 
         .results-count {
-            font-weight: 900;
-            color: var(--primary-red);
+            font-weight: 700;
+            color: var(--primary-blue);
         }
 
         /* News Grid */
@@ -298,20 +343,20 @@
         /* News Card */
         .news-card {
             background: white;
+            border-radius: 20px;
             overflow: hidden;
             text-decoration: none;
             color: inherit;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
             display: flex;
             flex-direction: column;
             height: 100%;
-            border-top: 4px solid var(--primary-red);
         }
 
         .news-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 35px rgba(230, 57, 70, 0.25);
+            box-shadow: 0 12px 35px rgba(11, 122, 189, 0.2);
         }
 
         .news-card-image-wrapper {
@@ -328,21 +373,23 @@
         }
 
         .news-card:hover .news-card-image {
-            transform: scale(1.15);
+            transform: scale(1.1);
         }
 
         .news-card-badge {
             position: absolute;
-            top: 0;
-            left: 0;
-            background: var(--primary-red);
+            top: 1rem;
+            left: 1rem;
+            background: linear-gradient(135deg, var(--gradient-blue-start) 0%, var(--gradient-blue-end) 100%);
             color: white;
             padding: 0.5rem 1rem;
-            font-size: 0.7rem;
-            font-weight: 900;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .news-card-content {
@@ -354,7 +401,7 @@
 
         .news-card-title {
             font-size: 1.15rem;
-            font-weight: 900;
+            font-weight: 800;
             color: var(--text-dark);
             line-height: 1.4;
             margin-bottom: 0.75rem;
@@ -369,7 +416,6 @@
             font-size: 0.9rem;
             color: var(--text-gray);
             line-height: 1.6;
-            font-weight: 600;
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
@@ -382,7 +428,7 @@
             align-items: center;
             justify-content: space-between;
             padding-top: 1rem;
-            border-top: 2px solid var(--bg-light);
+            border-top: 1px solid var(--border-light);
             margin-top: auto;
         }
 
@@ -395,13 +441,14 @@
         .author-avatar-small {
             width: 32px;
             height: 32px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-blue);
             object-fit: cover;
-            border: 2px solid var(--primary-red);
         }
 
         .author-name-small {
-            font-size: 0.8rem;
-            font-weight: 800;
+            font-size: 0.85rem;
+            font-weight: 600;
             color: var(--text-dark);
         }
 
@@ -410,8 +457,7 @@
             align-items: center;
             gap: 0.35rem;
             color: var(--text-gray);
-            font-size: 0.75rem;
-            font-weight: 700;
+            font-size: 0.8rem;
         }
 
         .date-icon {
@@ -458,6 +504,7 @@
             gap: 0.5rem;
             background: white;
             padding: 1rem 1.5rem;
+            border-radius: 50px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
@@ -467,25 +514,24 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 50%;
             border: 2px solid transparent;
             color: var(--text-gray);
             text-decoration: none;
-            font-weight: 800;
-            font-size: 0.9rem;
+            font-weight: 600;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
         }
 
         .pagination-link:hover {
-            background: var(--bg-light);
-            color: var(--primary-red);
-            border-color: var(--primary-red);
+            background: rgba(11, 122, 189, 0.08);
+            color: var(--primary-blue);
         }
 
         .pagination-link.active {
-            background: var(--primary-red);
-            border-color: var(--primary-red);
+            background: linear-gradient(135deg, var(--gradient-blue-start) 0%, var(--gradient-blue-end) 100%);
             color: white;
-            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+            box-shadow: 0 4px 15px rgba(11, 122, 189, 0.3);
         }
 
         .pagination-link.disabled {
@@ -497,7 +543,6 @@
         .pagination-dots {
             color: var(--text-gray);
             padding: 0 0.5rem;
-            font-weight: 900;
         }
 
         /* Empty State */
@@ -505,29 +550,28 @@
             text-align: center;
             padding: 5rem 2rem;
             background: white;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            border-top: 6px solid var(--primary-red);
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
         }
 
-        .empty-icon-box {
+        .empty-icon {
             width: 120px;
             height: 120px;
-            background: var(--bg-light);
+            background: linear-gradient(135deg, rgba(14, 134, 201, 0.1) 0%, rgba(11, 95, 150, 0.1) 100%);
+            border-radius: 50%;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary-red);
+            color: var(--primary-blue);
             font-size: 3rem;
             margin-bottom: 1.5rem;
         }
 
         .empty-title {
             font-size: 1.75rem;
-            font-weight: 900;
+            font-weight: 800;
             color: var(--text-dark);
             margin-bottom: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .empty-description {
@@ -536,7 +580,6 @@
             max-width: 500px;
             margin: 0 auto 2rem;
             line-height: 1.6;
-            font-weight: 600;
         }
 
         .empty-btn {
@@ -544,22 +587,19 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.85rem 2rem;
-            background: var(--primary-red);
+            background: linear-gradient(135deg, var(--gradient-blue-start) 0%, var(--gradient-blue-end) 100%);
             color: white;
             text-decoration: none;
-            font-weight: 900;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border: 2px solid var(--primary-red);
+            font-weight: 700;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(11, 122, 189, 0.3);
             transition: all 0.3s ease;
         }
 
         .empty-btn:hover {
-            background: transparent;
-            color: var(--primary-red);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.3);
+            box-shadow: 0 8px 25px rgba(11, 122, 189, 0.4);
         }
 
         /* Responsive Design */
@@ -571,7 +611,7 @@
 
         @media (max-width: 1024px) {
             .all-news-header-wrapper {
-                padding: 3rem 0;
+                padding: 3.5rem 0 4.5rem;
             }
 
             .header-title {
@@ -602,22 +642,22 @@
 
             .sort-view-controls {
                 width: 100%;
-                justify-content: flex-end;
+                justify-content: space-between;
             }
         }
 
         @media (max-width: 768px) {
             .all-news-header-wrapper {
-                padding: 2.5rem 0;
+                padding: 3rem 0 4rem;
             }
 
             .all-news-header-container {
                 padding: 0 1.5rem;
             }
 
-            .header-icon-box {
-                width: 70px;
-                height: 70px;
+            .header-icon {
+                width: 60px;
+                height: 60px;
                 font-size: 2rem;
             }
 
@@ -631,6 +671,7 @@
 
             .all-news-content {
                 padding: 0 1.5rem;
+                margin-top: -2rem;
             }
 
             .news-grid {
@@ -672,7 +713,7 @@
             }
 
             .header-search-btn {
-                padding: 1rem 1.5rem;
+                padding: 0.85rem 1.5rem;
             }
 
             .all-news-content {
@@ -689,6 +730,14 @@
 
             .sort-view-controls {
                 flex-direction: column;
+                width: 100%;
+            }
+
+            .sort-dropdown {
+                width: 100%;
+            }
+
+            .sort-select {
                 width: 100%;
             }
         }
@@ -740,11 +789,17 @@
         <div class="all-news-header-container">
             <!-- Header Badge -->
             <div class="header-badge fade-in-up">
-                ⚡ EKSPLORASI BERITA
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                    <path
+                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+                Eksplorasi Berita
             </div>
 
             <!-- Header Icon -->
-            <div class="header-icon-box fade-in-up">
+            <div class="header-icon fade-in-up">
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="50" height="50">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
@@ -752,7 +807,7 @@
             </div>
 
             <!-- Header Title -->
-            <h1 class="header-title fade-in-up">SEMUA BERITA</h1>
+            <h1 class="header-title fade-in-up">Semua Berita</h1>
 
             <!-- Header Description -->
             <p class="header-description fade-in-up">
@@ -763,14 +818,18 @@
             <!-- Search Bar -->
             <div class="header-search-wrapper fade-in-up">
                 <form action="{{ route('news.index') }}" method="GET" class="header-search-box">
+                    <svg class="search-icon-header" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
                     <input type="text" name="search" class="header-search-input"
                         placeholder="Cari berita, topik, atau kategori..." value="{{ request('search') }}">
                     <button type="submit" class="header-search-btn">
+                        <span>Cari</span>
                         <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
-                        <span>CARI</span>
                     </button>
                 </form>
             </div>
@@ -784,19 +843,16 @@
             <!-- Category Filter Row -->
             <div class="control-row">
                 <div class="category-filter">
-                    <div class="filter-label">
-                        <span class="filter-number">01</span>
-                        <span>KATEGORI</span>
-                    </div>
+                    <span class="filter-label">Kategori:</span>
                     <div class="category-pills">
                         <a href="{{ route('news.index') }}"
                             class="category-pill {{ !request('category') ? 'active' : '' }}">
-                            SEMUA
+                            Semua
                         </a>
                         @foreach (\App\Models\Categories::all() as $cat)
                             <a href="{{ route('news.index', ['category' => $cat->slug]) }}"
                                 class="category-pill {{ request('category') == $cat->slug ? 'active' : '' }}">
-                                {{ strtoupper($cat->title) }}
+                                {{ $cat->title }}
                             </a>
                         @endforeach
                     </div>
@@ -807,26 +863,31 @@
             <div class="control-row">
                 <div class="results-info">
                     <span class="results-text">
-                        MENAMPILKAN <span class="results-count">{{ $news->total() }}</span> ARTIKEL
+                        Menampilkan <span class="results-count">{{ $news->total() }}</span> artikel
                         @if (request('search'))
-                            UNTUK "<strong>{{ strtoupper(request('search')) }}</strong>"
+                            untuk pencarian "<strong>{{ request('search') }}</strong>"
                         @endif
                     </span>
                 </div>
 
                 <div class="sort-view-controls">
+                    <!-- Sort Dropdown -->
+                    <div class="sort-dropdown">
+
+                    </div>
+
                     <!-- View Toggle -->
                     <div class="view-toggle">
                         <button class="view-btn active" onclick="toggleView('grid')" title="Tampilan Grid">
-                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                                <path
-                                    d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3z" />
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                             </svg>
                         </button>
                         <button class="view-btn" onclick="toggleView('list')" title="Tampilan List">
-                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                                <path fill-rule="evenodd"
-                                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
                             </svg>
                         </button>
                     </div>
@@ -841,7 +902,7 @@
                     <a href="{{ route('news.show', $item->slug) }}"
                         class="news-card fade-in-up stagger-{{ ($index % 6) + 1 }}">
                         <div class="news-card-image-wrapper">
-                            <span class="news-card-badge">{{ strtoupper($item->category->title) }}</span>
+                            <span class="news-card-badge">{{ $item->category->title }}</span>
                             <img src="{{ asset('storage/' . $item->thumbnail) }}" alt="{{ $item->title }}"
                                 class="news-card-image">
                         </div>
@@ -875,23 +936,23 @@
         @else
             <!-- Empty State -->
             <div class="empty-state fade-in-up">
-                <div class="empty-icon-box">
+                <div class="empty-icon">
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="60" height="60">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                 </div>
-                <h2 class="empty-title">TIDAK ADA HASIL DITEMUKAN</h2>
+                <h2 class="empty-title">Tidak Ada Hasil Ditemukan</h2>
                 <p class="empty-description">
                     Maaf, kami tidak menemukan berita yang sesuai dengan pencarian Anda.
                     Coba kata kunci lain atau jelajahi kategori yang tersedia.
                 </p>
                 <a href="{{ route('news.index') }}" class="empty-btn">
-                    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                     </svg>
-                    <span>RESET PENCARIAN</span>
+                    Reset Pencarian
                 </a>
             </div>
         @endif
@@ -911,6 +972,13 @@
             } else {
                 newsGrid.classList.remove('list-view');
             }
+        }
+
+        // Sort News
+        function sortNews(sortType) {
+            const url = new URL(window.location.href);
+            url.searchParams.set('sort', sortType);
+            window.location.href = url.toString();
         }
 
         // Smooth scroll animation on page load
