@@ -1,26 +1,34 @@
 @if ($paginator->hasPages())
-    <div class="w-full flex items-center justify-center gap-3 pt-12 mb-10">
+    <div class="pagination">
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
-            <p class="border border-slate-300 rounded-lg px-4 py-2 font-medium text-slate-300 cursor-not-allowed">&lt;</p>
+            <span class="pagination-link disabled">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </span>
         @else
-            <a href="{{ $paginator->previousPageUrl() }}" class="border border-slate-300 rounded-lg px-4 py-2 font-medium hover:bg-primary hover:border-none hover:text-white">&lt;</a>
+            <a href="{{ $paginator->previousPageUrl() }}" class="pagination-link">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </a>
         @endif
 
         {{-- Pagination Elements --}}
         @foreach ($elements as $element)
             {{-- "Three Dots" Separator --}}
             @if (is_string($element))
-                <p class="border border-slate-300 rounded-lg px-4 py-2 font-medium">{{ $element }}</p>
+                <span class="pagination-dots">{{ $element }}</span>
             @endif
 
             {{-- Array Of Links --}}
             @if (is_array($element))
                 @foreach ($element as $page => $url)
                     @if ($page == $paginator->currentPage())
-                        <p class="rounded-lg px-4 py-2 font-medium bg-primary text-white">{{ $page }}</p>
+                        <span class="pagination-link active">{{ $page }}</span>
                     @else
-                        <a href="{{ $url }}" class="border border-slate-300 rounded-lg px-4 py-2 font-medium hover:bg-primary hover:border-none hover:text-white">{{ $page }}</a>
+                        <a href="{{ $url }}" class="pagination-link">{{ $page }}</a>
                     @endif
                 @endforeach
             @endif
@@ -28,9 +36,17 @@
 
         {{-- Next Page Link --}}
         @if ($paginator->hasMorePages())
-            <a href="{{ $paginator->nextPageUrl() }}" class="border border-slate-300 rounded-lg px-4 py-2 font-medium hover:bg-primary hover:border-none hover:text-white">&gt;</a>
+            <a href="{{ $paginator->nextPageUrl() }}" class="pagination-link">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </a>
         @else
-            <p class="border border-slate-300 rounded-lg px-4 py-2 font-medium text-slate-300 cursor-not-allowed">&gt;</p>
+            <span class="pagination-link disabled">
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </span>
         @endif
     </div>
 @endif

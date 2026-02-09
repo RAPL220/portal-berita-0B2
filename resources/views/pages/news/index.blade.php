@@ -873,20 +873,7 @@
                 <div class="sort-view-controls">
                     <!-- Sort Dropdown -->
                     <div class="sort-dropdown">
-                        <select class="sort-select" onchange="sortNews(this.value)">
-                            <option value="latest" {{ request('sort') == 'latest' || !request('sort') ? 'selected' : '' }}>
-                                Terbaru
-                            </option>
-                            <option value="popular" {{ request('sort') == 'popular' ? 'selected' : '' }}>
-                                Terpopuler
-                            </option>
-                            <option value="oldest" {{ request('sort') == 'oldest' ? 'selected' : '' }}>
-                                Terlama
-                            </option>
-                        </select>
-                        <svg class="sort-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                        </svg>
+
                     </div>
 
                     <!-- View Toggle -->
