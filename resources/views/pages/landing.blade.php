@@ -6,19 +6,16 @@
 
     <style>
         :root {
-            --primary-blue: #0B7ABD;
-            --primary-blue-dark: #0A5A8F;
-            --primary-blue-light: #1E9AD6;
-            --accent-blue: #3BB5E8;
-            --gradient-blue-start: #0E86C9;
-            --gradient-blue-end: #0B5F96;
-            --dark-blue: #1E293B;
-            --text-dark: #0F172A;
-            --text-gray: #64748B;
-            --bg-light: #F8FAFC;
-            --border-light: #E2E8F0;
+            --primary-red: #E63946;
+            --primary-red-dark: #D62828;
+            --primary-red-light: #F77F00;
+            --accent-red: #FCBF49;
+            --dark-bg: #1D3557;
+            --text-dark: #14213D;
+            --text-gray: #6C757D;
+            --bg-light: #F1FAEE;
+            --border-light: #DEE2E6;
             --white: #FFFFFF;
-            --orange-accent: #FF6B35;
         }
 
         * {
@@ -29,13 +26,13 @@
 
         body {
             background: var(--bg-light);
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
 
         /* ==================== HERO SECTION ==================== */
         .hero-wrapper {
-            background: linear-gradient(135deg, var(--gradient-blue-start) 0%, var(--gradient-blue-end) 100%);
-            padding: 3rem 0 4rem;
+            background: var(--dark-bg);
+            padding: 2rem 0;
             position: relative;
             overflow: hidden;
         }
@@ -47,7 +44,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+            opacity: 0.9;
         }
 
         .hero-container {
@@ -62,26 +60,25 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 0.5rem 1.25rem;
-            border-radius: 50px;
-            color: white;
-            font-size: 0.9rem;
-            font-weight: 600;
+            background: var(--white);
+            color: var(--primary-red);
+            padding: 0.5rem 1.5rem;
+            font-size: 0.75rem;
+            font-weight: 900;
             margin-bottom: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .hero-swiper {
-            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         }
 
         .swiper-slide {
             position: relative;
-            height: 550px;
+            height: 500px;
             background-size: cover;
             background-position: center;
         }
@@ -89,7 +86,7 @@
         .slide-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0) 100%);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.3) 60%, transparent 100%);
         }
 
         .slide-content {
@@ -97,31 +94,30 @@
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 3rem;
+            padding: 2.5rem;
             z-index: 10;
         }
 
         .slide-category {
             display: inline-block;
-            background: var(--primary-blue);
+            background: var(--primary-red);
             color: white;
-            padding: 0.5rem 1.25rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.7rem;
+            font-weight: 900;
             margin-bottom: 1rem;
-            letter-spacing: 0.5px;
             text-transform: uppercase;
+            letter-spacing: 1.5px;
         }
 
         .slide-title {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 900;
             color: white;
-            line-height: 1.15;
+            line-height: 1.2;
             margin-bottom: 1rem;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            max-width: 900px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+            max-width: 800px;
         }
 
         .slide-author {
@@ -132,87 +128,92 @@
         }
 
         .author-avatar {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 3px solid white;
+            width: 38px;
+            height: 38px;
             object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border: 2px solid white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
         }
 
         .author-name {
             color: white;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 600;
         }
 
-        /* ==================== TRENDING NEWS SECTION ==================== */
-        .trending-section {
+        /* ==================== GRID CARDS SECTION ==================== */
+        .grid-cards-section {
             max-width: 1400px;
-            margin: -2rem auto 4rem;
+            margin: -3rem auto 4rem;
             padding: 0 2rem;
             position: relative;
             z-index: 10;
         }
 
-        .trending-grid {
+        .grid-cards-container {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
         }
 
-        .trending-card {
+        .grid-card {
             background: white;
-            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
             transition: all 0.3s ease;
             text-decoration: none;
             color: inherit;
             display: flex;
             flex-direction: column;
+            border-top: 4px solid var(--primary-red);
         }
 
-        .trending-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+        .grid-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(230, 57, 70, 0.3);
         }
 
-        .trending-image {
+        .grid-card-image-wrapper {
+            position: relative;
             width: 100%;
-            height: 180px;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .grid-card-image {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        .trending-card:hover .trending-image {
-            transform: scale(1.1);
+        .grid-card:hover .grid-card-image {
+            transform: scale(1.15);
         }
 
-        .trending-badge {
+        .grid-card-badge {
             position: absolute;
-            top: 1rem;
-            left: 1rem;
-            background: var(--primary-blue);
+            top: 0;
+            left: 0;
+            background: var(--primary-red);
             color: white;
-            padding: 0.4rem 0.9rem;
-            border-radius: 8px;
-            font-size: 0.75rem;
-            font-weight: 700;
+            padding: 0.4rem 1rem;
+            font-size: 0.65rem;
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
-        .trending-content {
-            padding: 1.25rem;
+        .grid-card-content {
+            padding: 1.5rem;
             flex: 1;
             display: flex;
             flex-direction: column;
         }
 
-        .trending-title {
+        .grid-card-title {
             font-size: 1rem;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--text-dark);
             line-height: 1.4;
             margin-bottom: auto;
@@ -222,138 +223,174 @@
             overflow: hidden;
         }
 
-        .trending-date {
-            color: var(--text-gray);
-            font-size: 0.8rem;
-            margin-top: 0.75rem;
+        .grid-card-meta {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: space-between;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--border-light);
+            font-size: 0.75rem;
+            color: var(--text-gray);
         }
 
-        /* ==================== MAIN CONTENT SECTION ==================== */
-        .main-content {
+        /* ==================== MAIN LAYOUT ==================== */
+        .main-layout {
             max-width: 1400px;
-            margin: 4rem auto;
+            margin: 0 auto;
             padding: 0 2rem;
         }
 
-        .content-grid {
+        .layout-grid {
             display: grid;
-            grid-template-columns: 2.2fr 1fr;
-            gap: 3rem;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
         }
 
         /* Section Header */
         .section-header {
+            background: white;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--primary-red);
+        }
+
+        .section-title-wrapper {
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 3px solid var(--primary-blue);
         }
 
-        .section-icon {
+        .section-number {
             width: 40px;
             height: 40px;
-            background: var(--primary-blue);
-            border-radius: 10px;
+            background: var(--primary-red);
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
+            font-weight: 900;
         }
 
         .section-title {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: 900;
             color: var(--text-dark);
             margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
-        /* Latest News Cards */
-        .news-list {
+        .btn-view-all {
+            background: var(--primary-red);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.75rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--primary-red);
+        }
+
+        .btn-view-all:hover {
+            background: transparent;
+            color: var(--primary-red);
+        }
+
+        /* ==================== NEWS LIST ==================== */
+        .news-container {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
-        .news-card {
+        .news-box {
             background: white;
-            border-radius: 20px;
-            overflow: hidden;
             display: flex;
             gap: 1.5rem;
             text-decoration: none;
             color: inherit;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border-left: 5px solid transparent;
         }
 
-        .news-card:hover {
-            transform: translateX(8px);
-            box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
+        .news-box:hover {
+            box-shadow: 0 8px 30px rgba(230, 57, 70, 0.25);
+            border-left-color: var(--primary-red);
+            transform: translateX(5px);
         }
 
-        .news-image {
+        .news-box-image-wrapper {
+            position: relative;
             width: 280px;
             height: 200px;
-            object-fit: cover;
-            border-radius: 16px;
             flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .news-box-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        .news-card:hover .news-image {
-            transform: scale(1.05);
+        .news-box:hover .news-box-image {
+            transform: scale(1.1);
         }
 
-        .news-content {
+        .news-box-content {
             flex: 1;
+            padding: 1.5rem 1.5rem 1.5rem 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
         }
 
-        .news-meta {
+        .news-box-meta {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
 
-        .news-category {
-            background: linear-gradient(135deg, var(--gradient-blue-start) 0%, var(--gradient-blue-end) 100%);
+        .news-box-category {
+            background: var(--primary-red);
             color: white;
-            padding: 0.4rem 1rem;
-            border-radius: 8px;
-            font-size: 0.75rem;
-            font-weight: 700;
+            padding: 0.3rem 0.9rem;
+            font-size: 0.65rem;
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
-        .news-time {
+        .news-box-time {
             color: var(--text-gray);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             display: flex;
             align-items: center;
             gap: 0.35rem;
         }
 
-        .news-title {
-            font-size: 1.5rem;
-            font-weight: 800;
+        .news-box-title {
+            font-size: 1.4rem;
+            font-weight: 900;
             color: var(--text-dark);
             line-height: 1.3;
             margin-bottom: 0.75rem;
         }
 
-        .news-excerpt {
-            font-size: 0.95rem;
+        .news-box-excerpt {
+            font-size: 0.9rem;
             color: var(--text-gray);
             line-height: 1.6;
             display: -webkit-box;
@@ -363,46 +400,47 @@
         }
 
         /* ==================== SIDEBAR ==================== */
-        .sidebar {
-            position: sticky;
-            top: 2rem;
-            height: fit-content;
+        .sidebar-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
         }
 
-        .sidebar-widget {
+        .sidebar-box {
             background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
 
-        .widget-header {
+        .sidebar-box-header {
+            background: var(--dark-bg);
+            padding: 1rem 1.5rem;
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--border-light);
         }
 
-        .widget-icon {
-            width: 36px;
-            height: 36px;
-            background: linear-gradient(135deg, var(--gradient-blue-start) 0%, var(--gradient-blue-end) 100%);
-            border-radius: 8px;
+        .sidebar-box-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--primary-red);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
-        .widget-title {
-            font-size: 1.25rem;
-            font-weight: 800;
-            color: var(--text-dark);
+        .sidebar-box-title {
+            font-size: 1.1rem;
+            font-weight: 900;
+            color: white;
             margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sidebar-box-content {
+            padding: 1.5rem;
         }
 
         .sidebar-item {
@@ -411,7 +449,7 @@
             padding: 1rem 0;
             text-decoration: none;
             color: inherit;
-            border-bottom: 1px solid var(--border-light);
+            border-bottom: 2px solid var(--border-light);
             transition: all 0.3s ease;
         }
 
@@ -421,24 +459,23 @@
         }
 
         .sidebar-item:hover {
-            transform: translateX(5px);
+            padding-left: 0.5rem;
         }
 
-        .sidebar-image {
-            width: 90px;
-            height: 90px;
+        .sidebar-item-image {
+            width: 80px;
+            height: 80px;
             object-fit: cover;
-            border-radius: 12px;
             flex-shrink: 0;
         }
 
-        .sidebar-content {
+        .sidebar-item-content {
             flex: 1;
         }
 
         .sidebar-item-title {
-            font-size: 0.95rem;
-            font-weight: 700;
+            font-size: 0.9rem;
+            font-weight: 800;
             color: var(--text-dark);
             line-height: 1.4;
             margin-bottom: 0.5rem;
@@ -448,214 +485,68 @@
             overflow: hidden;
         }
 
-        .sidebar-time {
+        .sidebar-item-time {
             color: var(--text-gray);
-            font-size: 0.75rem;
-        }
-
-        /* ==================== FEATURED SECTION (In Combined Layout) ==================== */
-        .featured-section {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .featured-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .btn-view-all {
-            background: linear-gradient(135deg, var(--gradient-blue-start) 0%, var(--gradient-blue-end) 100%);
-            color: white;
-            padding: 0.85rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(11, 122, 189, 0.3);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-view-all:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(11, 122, 189, 0.4);
-            background: linear-gradient(135deg, var(--primary-blue-light) 0%, var(--gradient-blue-start) 100%);
-        }
-
-        .featured-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .featured-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            text-decoration: none;
-            color: inherit;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            display: flex;
-            gap: 1.25rem;
-            padding: 1.25rem;
-        }
-
-        .featured-card:hover {
-            transform: translateX(8px);
-            box-shadow: 0 8px 30px rgba(11, 122, 189, 0.15);
-        }
-
-        .featured-image-wrapper {
-            position: relative;
-            overflow: hidden;
-            width: 200px;
-            height: 160px;
-            flex-shrink: 0;
-            border-radius: 12px;
-        }
-
-        .featured-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .featured-card:hover .featured-image {
-            transform: scale(1.1);
-        }
-
-        .featured-category {
-            position: absolute;
-            top: 0.75rem;
-            left: 0.75rem;
-            background: var(--primary-blue);
-            color: white;
-            padding: 0.35rem 0.8rem;
-            border-radius: 8px;
             font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            z-index: 10;
+            font-weight: 600;
         }
 
-        .featured-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .featured-title {
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: var(--text-dark);
-            line-height: 1.3;
-            margin-bottom: 0.5rem;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .featured-excerpt {
-            font-size: 0.85rem;
-            color: var(--text-gray);
-            line-height: 1.5;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            margin-bottom: 0.5rem;
-        }
-
-        .featured-date {
-            color: var(--text-gray);
-            font-size: 0.75rem;
-            margin-top: auto;
-        }
-
-        /* ==================== POPULAR & FEATURED COMBINED SECTION ==================== */
-        .combined-section {
+        /* ==================== POPULAR SECTION ==================== */
+        .popular-section {
             max-width: 1400px;
-            margin: 5rem auto;
+            margin: 4rem auto;
             padding: 0 2rem;
         }
 
-        /* .combined-grid {
-                                display: grid;
-                                grid-template-columns: 1fr 1.2fr;
-                                gap: 3rem;
-                            } */
-
-        .left-column {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .right-column {
-            display: flex;
-            flex-direction: column;
-        }
-
         .popular-grid {
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
             gap: 2rem;
         }
 
-        .main-popular {
+        .popular-main-box {
             background: white;
-            border-radius: 24px;
             overflow: hidden;
             text-decoration: none;
             color: inherit;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            border-top: 6px solid var(--primary-red);
         }
 
-        .main-popular:hover {
+        .popular-main-box:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(11, 122, 189, 0.2);
+            box-shadow: 0 20px 50px rgba(230, 57, 70, 0.25);
         }
 
-        .main-popular-image {
+        .popular-main-image {
             width: 100%;
-            height: 350px;
+            height: 400px;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        .main-popular:hover .main-popular-image {
+        .popular-main-box:hover .popular-main-image {
             transform: scale(1.05);
         }
 
-        .main-popular-content {
+        .popular-main-content {
             padding: 2rem;
         }
 
-        .main-popular-category {
-            background: linear-gradient(135deg, var(--gradient-blue-start) 0%, var(--gradient-blue-end) 100%);
+        .popular-main-category {
+            background: var(--primary-red);
             color: white;
-            padding: 0.5rem 1.25rem;
-            border-radius: 10px;
-            font-size: 0.8rem;
-            font-weight: 700;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.7rem;
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1.5px;
             display: inline-block;
             margin-bottom: 1rem;
         }
 
-        .main-popular-title {
+        .popular-main-title {
             font-size: 1.75rem;
             font-weight: 900;
             color: var(--text-dark);
@@ -663,7 +554,7 @@
             margin-bottom: 1rem;
         }
 
-        .main-popular-excerpt {
+        .popular-main-excerpt {
             font-size: 1rem;
             color: var(--text-gray);
             line-height: 1.6;
@@ -674,63 +565,62 @@
             margin-bottom: 1rem;
         }
 
-        .side-popular-list {
+        .popular-side-container {
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
+            gap: 1.5rem;
         }
 
-        .side-popular-card {
+        .popular-side-box {
             background: white;
-            border-radius: 16px;
-            padding: 1rem;
+            padding: 1.25rem;
             display: flex;
-            gap: 1rem;
+            gap: 1.25rem;
             text-decoration: none;
             color: inherit;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
+            border-left: 4px solid transparent;
         }
 
-        .side-popular-card:hover {
-            transform: translateX(8px);
-            box-shadow: 0 8px 25px rgba(11, 122, 189, 0.15);
+        .popular-side-box:hover {
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.25);
+            border-left-color: var(--primary-red);
+            transform: translateX(5px);
         }
 
-        .side-popular-image {
-            width: 100px;
-            height: 100px;
+        .popular-side-image {
+            width: 120px;
+            height: 120px;
             object-fit: cover;
-            border-radius: 12px;
             flex-shrink: 0;
         }
 
-        .side-popular-content {
+        .popular-side-content {
             flex: 1;
             display: flex;
             flex-direction: column;
         }
 
-        .side-popular-badge {
-            background: var(--primary-blue);
+        .popular-side-badge {
+            background: var(--dark-bg);
             color: white;
-            padding: 0.35rem 0.8rem;
-            border-radius: 6px;
-            font-size: 0.7rem;
-            font-weight: 700;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.65rem;
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             display: inline-block;
             width: fit-content;
             margin-bottom: 0.5rem;
         }
 
-        .side-popular-title {
-            font-size: 0.95rem;
-            font-weight: 700;
+        .popular-side-title {
+            font-size: 1rem;
+            font-weight: 800;
             color: var(--text-dark);
             line-height: 1.4;
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.5rem;
             flex: 1;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -738,76 +628,31 @@
             overflow: hidden;
         }
 
-        .side-popular-excerpt {
-            font-size: 0.8rem;
-            color: var(--text-gray);
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-
-        .side-popular-time {
+        .popular-side-time {
             font-size: 0.75rem;
             color: var(--text-gray);
-            margin-top: 0.25rem;
+            margin-top: auto;
+            font-weight: 600;
         }
 
         /* ==================== RESPONSIVE DESIGN ==================== */
         @media (max-width: 1200px) {
-            .trending-grid {
+            .grid-cards-container {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .combined-grid {
+            .layout-grid {
                 grid-template-columns: 1fr;
             }
 
-            .content-grid {
-                grid-template-columns: 1.5fr 1fr;
-            }
-        }
-
-        @media (max-width: 1024px) {
-            .slide-title {
-                font-size: 2.25rem;
-            }
-
-            .content-grid {
+            .popular-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .sidebar {
-                position: relative;
-                top: 0;
-            }
-
-            .combined-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .news-card {
-                flex-direction: column;
-            }
-
-            .news-image {
-                width: 100%;
-                height: 250px;
-            }
-
-            .featured-card {
-                flex-direction: row;
-            }
-
-            .featured-image-wrapper {
-                width: 200px;
-                height: 160px;
             }
         }
 
         @media (max-width: 768px) {
             .hero-wrapper {
-                padding: 2rem 0 3rem;
+                padding: 1.5rem 0;
             }
 
             .swiper-slide {
@@ -822,54 +667,63 @@
                 font-size: 1.75rem;
             }
 
-            .trending-grid {
+            .grid-cards-container {
                 grid-template-columns: 1fr;
             }
 
-            .trending-section {
-                margin: -1rem auto 3rem;
-            }
-
-            .combined-grid {
-                grid-template-columns: 1fr;
+            .grid-cards-section {
+                margin: -2rem auto 3rem;
             }
 
             .section-title {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
             }
 
-            .news-title {
-                font-size: 1.25rem;
-            }
-
-            .main-popular-image {
-                height: 300px;
-            }
-
-            .main-popular-content {
-                padding: 1.5rem;
-            }
-
-            .main-popular-title {
-                font-size: 1.5rem;
-            }
-
-            .featured-card {
+            .news-box {
                 flex-direction: column;
             }
 
-            .featured-image-wrapper {
+            .news-box-image-wrapper {
                 width: 100%;
-                height: 200px;
+                height: 220px;
+            }
+
+            .news-box-content {
+                padding: 1.5rem;
+            }
+
+            .news-box-title {
+                font-size: 1.2rem;
+            }
+
+            .popular-main-image {
+                height: 300px;
+            }
+
+            .popular-main-content {
+                padding: 1.5rem;
+            }
+
+            .popular-main-title {
+                font-size: 1.4rem;
+            }
+
+            .popular-side-box {
+                flex-direction: column;
+            }
+
+            .popular-side-image {
+                width: 100%;
+                height: 180px;
             }
         }
 
         @media (max-width: 640px) {
 
             .hero-container,
-            .trending-section,
-            .main-content,
-            .combined-section {
+            .grid-cards-section,
+            .main-layout,
+            .popular-section {
                 padding: 0 1rem;
             }
 
@@ -888,56 +742,22 @@
             .section-header {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 0.5rem;
-            }
-
-            .section-title {
-                font-size: 1.35rem;
-            }
-
-            .news-card {
-                padding: 1rem;
-            }
-
-            .news-image {
-                height: 200px;
-            }
-
-            .sidebar-widget {
-                padding: 1.5rem;
-            }
-
-            .featured-header {
-                flex-direction: column;
-                align-items: flex-start;
                 gap: 1rem;
             }
 
-            .side-popular-card {
-                flex-direction: column;
+            .section-title {
+                font-size: 1.1rem;
             }
 
-            .side-popular-image {
-                width: 100%;
-                height: 180px;
-            }
-
-            .featured-card {
-                flex-direction: column;
+            .news-box {
                 padding: 0;
             }
 
-            .featured-image-wrapper {
-                width: 100%;
-                height: 200px;
-                border-radius: 0;
+            .sidebar-box-content {
+                padding: 1rem;
             }
 
-            .featured-content {
-                padding: 1.25rem;
-            }
-
-            .main-popular-image {
+            .popular-main-image {
                 height: 250px;
             }
         }
@@ -979,13 +799,14 @@
         .swiper-pagination-bullet {
             background: white;
             opacity: 0.5;
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
         }
 
         .swiper-pagination-bullet-active {
             opacity: 1;
-            background: white;
+            background: var(--primary-red);
+            width: 30px;
         }
     </style>
 
@@ -993,7 +814,7 @@
     <div class="hero-wrapper">
         <div class="hero-container">
             <div class="hero-badge">
-                Berita Terkini
+                ⚡ BERITA TERKINI
             </div>
             <div class="swiper hero-swiper">
                 <div class="swiper-wrapper">
@@ -1018,26 +839,20 @@
         </div>
     </div>
 
-    <!-- Trending News Section -->
-    <section class="trending-section">
-        <div class="trending-grid">
+    <!-- Grid Cards Section (Top 4 News) -->
+    <section class="grid-cards-section">
+        <div class="grid-cards-container">
             @foreach ($news->take(4) as $index => $item)
-                <a href="{{ route('news.show', $item->slug) }}"
-                    class="trending-card fade-in-up stagger-{{ $index + 1 }}">
-                    <div style="position: relative; overflow: hidden;">
-                        <span class="trending-badge">{{ $item->category->title }}</span>
+                <a href="{{ route('news.show', $item->slug) }}" class="grid-card fade-in-up stagger-{{ $index + 1 }}">
+                    <div class="grid-card-image-wrapper">
+                        <span class="grid-card-badge">{{ $item->category->title }}</span>
                         <img src="{{ asset('storage/' . $item->thumbnail) }}" alt="{{ $item->title }}"
-                            class="trending-image">
+                            class="grid-card-image">
                     </div>
-                    <div class="trending-content">
-                        <h3 class="trending-title">{{ $item->title }}</h3>
-                        <div class="trending-date">
-                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
-                                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z" />
-                            </svg>
-                            {{ \Carbon\Carbon::parse($item->created_at)->diffForHumans() }}
+                    <div class="grid-card-content">
+                        <h3 class="grid-card-title">{{ $item->title }}</h3>
+                        <div class="grid-card-meta">
+                            <span>{{ \Carbon\Carbon::parse($item->created_at)->diffForHumans() }}</span>
                         </div>
                     </div>
                 </a>
@@ -1045,71 +860,29 @@
         </div>
     </section>
 
-    <!-- Main Content Section -->
-    <section class="main-content">
-        <div class="content-grid">
+    <!-- Main Layout Section -->
+    <section class="main-layout">
+        <div class="layout-grid">
             <!-- Latest News -->
             <div>
                 <div class="section-header">
-
-                    <!-- Right Column: Featured News -->
-                    <div class="right-column">
-                        <div class="featured-section">
-                            <div class="featured-header">
-                                <div class="section-header" style="margin-bottom: 0; border-bottom: none;">
-                                    <div class="section-icon">
-                                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                                            <path
-                                                d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z" />
-                                        </svg>
-                                    </div>
-                                    <h2 class="section-title">Berita Unggulan</h2>
-                                </div>
-                                <a href="{{ route('news.index') }}" class="btn-view-all">
-                                    Lihat Semua
-                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                                    </svg>
-                                </a>
-                            </div>
-
-                            <div class="featured-grid">
-                                @foreach ($featureds as $index => $featured)
-                                    <a href="{{ route('news.show', $featured->slug) }}" class="featured-card">
-                                        <div class="featured-image-wrapper">
-                                            <span class="featured-category">{{ $featured->category->title }}</span>
-                                            <img src="{{ asset('storage/' . $featured->thumbnail) }}"
-                                                alt="{{ $featured->title }}" class="featured-image">
-                                        </div>
-                                        <div class="featured-content">
-                                            <h3 class="featured-title">{{ $featured->title }}</h3>
-                                            <div class="featured-excerpt">{!! $featured->content !!}</div>
-                                            <div class="featured-date">
-                                                <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16"
-                                                    style="display: inline-block; vertical-align: middle; margin-right: 0.35rem;">
-                                                    <path
-                                                        d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2z" />
-                                                </svg>
-                                                {{ \Carbon\Carbon::parse($featured->created_at)->format('d F Y') }}
-                                            </div>
-                                        </div>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </div>
+                    <div class="section-title-wrapper">
+                        <div class="section-number">01</div>
+                        <h2 class="section-title">Berita Terbaru</h2>
                     </div>
                 </div>
 
-                <div class="news-list">
-                    @foreach ($news->skip(4) as $item)
-                        <a href="{{ route('news.show', $item->slug) }}" class="news-card">
-                            <img src="{{ asset('storage/' . $item->thumbnail) }}" alt="{{ $item->title }}"
-                                class="news-image">
-                            <div class="news-content">
-                                <div class="news-meta">
-                                    <span class="news-category">{{ $item->category->title }}</span>
-                                    <span class="news-time">
+                <div class="news-container">
+                    @foreach ($news->skip(4)->take(6) as $item)
+                        <a href="{{ route('news.show', $item->slug) }}" class="news-box">
+                            <div class="news-box-image-wrapper">
+                                <img src="{{ asset('storage/' . $item->thumbnail) }}" alt="{{ $item->title }}"
+                                    class="news-box-image">
+                            </div>
+                            <div class="news-box-content">
+                                <div class="news-box-meta">
+                                    <span class="news-box-category">{{ $item->category->title }}</span>
+                                    <span class="news-box-time">
                                         <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
                                             <path
                                                 d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z" />
@@ -1119,100 +892,124 @@
                                         {{ \Carbon\Carbon::parse($item->created_at)->diffForHumans() }}
                                     </span>
                                 </div>
-                                <h3 class="news-title">{{ $item->title }}</h3>
-                                <div class="news-excerpt">{!! $item->content !!}</div>
+                                <h3 class="news-box-title">{{ $item->title }}</h3>
+                                <div class="news-box-excerpt">{!! $item->content !!}</div>
                             </div>
                         </a>
                     @endforeach
                 </div>
             </div>
 
-
-
             <!-- Sidebar -->
-            <aside class="sidebar">
-                <div class="sidebar-widget">
-                    <div class="widget-header">
-                        <div class="widget-icon">
-                            <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
+            <aside class="sidebar-container">
+                <!-- Featured News Widget -->
+                <div class="sidebar-box">
+                    <div class="sidebar-box-header">
+                        <div class="sidebar-box-icon">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                 <path
-                                    d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
+                                    d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
                             </svg>
                         </div>
-                        <h3 class="widget-title">Bacaan Populer</h3>
+                        <h3 class="sidebar-box-title">Unggulan</h3>
                     </div>
 
-                    @foreach ($newsDownList as $side)
-                        <a href="{{ route('news.show', $side->slug) }}" class="sidebar-item">
-                            <img src="{{ asset('storage/' . $side->thumbnail) }}" alt="{{ $side->title }}"
-                                class="sidebar-image">
-                            <div class="sidebar-content">
-                                <h4 class="sidebar-item-title">{{ $side->title }}</h4>
-                                <span
-                                    class="sidebar-time">{{ \Carbon\Carbon::parse($side->created_at)->diffForHumans() }}</span>
-                            </div>
-                        </a>
-                    @endforeach
-                </div>
-            </aside>
-        </div>
-    </section>
-
-    <!-- Combined Popular & Featured Section -->
-    <section class="combined-section">
-        <div class="combined-grid">
-            <!-- Left Column: Popular News -->
-            <div class="left-column">
-                <div class="section-header">
-                    <div class="section-icon">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                            <path
-                                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                        </svg>
-                    </div>
-                    <h2 class="section-title">Berita Populer</h2>
-                </div>
-
-                <div class="popular-grid">
-                    @if (isset($mostViewed[0]))
-                        <a href="{{ route('news.show', $mostViewed[0]->slug) }}" class="main-popular">
-                            <div style="position: relative; overflow: hidden;">
-                                <img src="{{ asset('storage/' . $mostViewed[0]->thumbnail) }}"
-                                    alt="{{ $mostViewed[0]->title }}" class="main-popular-image">
-                            </div>
-                            <div class="main-popular-content">
-                                <span class="main-popular-category">{{ $mostViewed[0]->category->title }}</span>
-                                <h2 class="main-popular-title">{{ $mostViewed[0]->title }}</h2>
-                                <div class="main-popular-excerpt">{!! $mostViewed[0]->content !!}</div>
-                                <div class="trending-date">
-                                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
-                                        <path
-                                            d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2z" />
-                                    </svg>
-                                    {{ \Carbon\Carbon::parse($mostViewed[0]->created_at)->format('d F Y') }}
-                                </div>
-                            </div>
-                        </a>
-                    @endif
-
-                    <div class="side-popular-list">
-                        @foreach ($mostViewed->skip(1)->take(5) as $popular)
-                            <a href="{{ route('news.show', $popular->slug) }}" class="side-popular-card">
-                                <img src="{{ asset('storage/' . $popular->thumbnail) }}" alt="{{ $popular->title }}"
-                                    class="side-popular-image">
-                                <div class="side-popular-content">
-                                    <span class="side-popular-badge">{{ $popular->category->title }}</span>
-                                    <h3 class="side-popular-title">{{ $popular->title }}</h3>
-                                    <div class="side-popular-time">
-                                        {{ \Carbon\Carbon::parse($popular->created_at)->diffForHumans() }}</div>
+                    <div class="sidebar-box-content">
+                        @foreach ($featureds as $featured)
+                            <a href="{{ route('news.show', $featured->slug) }}" class="sidebar-item">
+                                <img src="{{ asset('storage/' . $featured->thumbnail) }}" alt="{{ $featured->title }}"
+                                    class="sidebar-item-image">
+                                <div class="sidebar-item-content">
+                                    <h4 class="sidebar-item-title">{{ $featured->title }}</h4>
+                                    <span
+                                        class="sidebar-item-time">{{ \Carbon\Carbon::parse($featured->created_at)->format('d M Y') }}</span>
                                 </div>
                             </a>
                         @endforeach
                     </div>
                 </div>
+
+                <!-- Popular Reading Widget -->
+                <div class="sidebar-box">
+                    <div class="sidebar-box-header">
+                        <div class="sidebar-box-icon">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
+                            </svg>
+                        </div>
+                        <h3 class="sidebar-box-title">Terpopuler</h3>
+                    </div>
+
+                    <div class="sidebar-box-content">
+                        @foreach ($newsDownList as $side)
+                            <a href="{{ route('news.show', $side->slug) }}" class="sidebar-item">
+                                <img src="{{ asset('storage/' . $side->thumbnail) }}" alt="{{ $side->title }}"
+                                    class="sidebar-item-image">
+                                <div class="sidebar-item-content">
+                                    <h4 class="sidebar-item-title">{{ $side->title }}</h4>
+                                    <span
+                                        class="sidebar-item-time">{{ \Carbon\Carbon::parse($side->created_at)->diffForHumans() }}</span>
+                                </div>
+                            </a>
+                        @endforeach
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Popular News Section -->
+    <section class="popular-section">
+        <div class="section-header">
+            <div class="section-title-wrapper">
+                <div class="section-number">02</div>
+                <h2 class="section-title">Berita Populer</h2>
             </div>
+            <a href="{{ route('news.index') }}" class="btn-view-all">
+                Lihat Semua →
+            </a>
+        </div>
 
+        <div class="popular-grid">
+            <!-- Main Popular Card -->
+            @if (isset($mostViewed[0]))
+                <a href="{{ route('news.show', $mostViewed[0]->slug) }}" class="popular-main-box">
+                    <div style="position: relative; overflow: hidden;">
+                        <img src="{{ asset('storage/' . $mostViewed[0]->thumbnail) }}" alt="{{ $mostViewed[0]->title }}"
+                            class="popular-main-image">
+                    </div>
+                    <div class="popular-main-content">
+                        <span class="popular-main-category">{{ $mostViewed[0]->category->title }}</span>
+                        <h2 class="popular-main-title">{{ $mostViewed[0]->title }}</h2>
+                        <div class="popular-main-excerpt">{!! $mostViewed[0]->content !!}</div>
+                        <div class="news-box-time">
+                            <svg width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2z" />
+                            </svg>
+                            {{ \Carbon\Carbon::parse($mostViewed[0]->created_at)->format('d F Y') }}
+                        </div>
+                    </div>
+                </a>
+            @endif
 
+            <!-- Side Popular List -->
+            <div class="popular-side-container">
+                @foreach ($mostViewed->skip(1)->take(4) as $popular)
+                    <a href="{{ route('news.show', $popular->slug) }}" class="popular-side-box">
+                        <img src="{{ asset('storage/' . $popular->thumbnail) }}" alt="{{ $popular->title }}"
+                            class="popular-side-image">
+                        <div class="popular-side-content">
+                            <span class="popular-side-badge">{{ $popular->category->title }}</span>
+                            <h3 class="popular-side-title">{{ $popular->title }}</h3>
+                            <div class="popular-side-time">
+                                {{ \Carbon\Carbon::parse($popular->created_at)->diffForHumans() }}
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
         </div>
     </section>
 
