@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Fokus Kito')
+@section('title', 'Sobat Terkini')
 
 @section('content')
 
@@ -590,10 +590,10 @@
         }
 
         /* .combined-grid {
-                                display: grid;
-                                grid-template-columns: 1fr 1.2fr;
-                                gap: 3rem;
-                            } */
+                                    display: grid;
+                                    grid-template-columns: 1fr 1.2fr;
+                                    gap: 3rem;
+                                } */
 
         .left-column {
             display: flex;

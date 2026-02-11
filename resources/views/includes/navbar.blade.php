@@ -6,7 +6,7 @@
             <div class="logo-wrapper-nav">
                 <a href="{{ route('landing') }}" class="logo-link">
                     <div class="logo-container">
-                        <img id="logo_navbar" src="{{ asset('/asset/img/logo_fokuskito.png') }}" alt="Fokus Kito Logo">
+                        <img id="logo_navbar" src="{{ asset('/asset/img/logo.png') }}" alt="Logo">
                     </div>
                 </a>
 

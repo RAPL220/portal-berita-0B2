@@ -21,7 +21,7 @@
             <div class="footer-brand-section">
                 <div class="footer-brand">
                     <div class="logo-wrapper">
-                        <img id="logo_footer" src="{{ asset('/asset/img/logo_fokuskito.png') }}" alt="Fokus Kito Logo">
+                        <img id="logo_footer" src="{{ asset('/asset/img/logo.png') }}" alt="Logo">
                     </div>
                 </div>
                 <p class="footer-description">
@@ -133,7 +133,8 @@
         <!-- Footer Bottom -->
         <div class="footer-bottom">
             <div class="footer-bottom-content">
-                <p class="copyright">&copy; {{ date('Y') }} Fokus Kito. All rights reserved.</p>
+                <p class="copyright">&copy; {{ date('Y') }}
+                    sobat terkini. All rights reserved.</p>
                 <div class="footer-bottom-links">
                     <a href="#" class="footer-bottom-link">Privacy Policy</a>
                     <span class="separator">•</span>
