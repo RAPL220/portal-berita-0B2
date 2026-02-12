@@ -21,7 +21,7 @@
             <div class="footer-brand-section">
                 <div class="footer-brand">
                     <div class="logo-wrapper">
-                        <img id="logo_footer" src="{{ asset('/asset/img/logo.png') }}" alt="Logo">
+                        <img id="logo_footer" src="{{ asset('/asset/img/Sobat_Terkini.png') }}" alt="Logo">
                     </div>
                 </div>
                 <p class="footer-description">
@@ -225,7 +225,7 @@
 
     .logo-wrapper {
         background: white;
-        padding: 0.75rem 3rem;
+        padding: 0.75rem 1rem;
         border-radius: 12px;
         display: inline-flex;
         align-items: center;
@@ -240,7 +240,7 @@
 
     #logo_footer {
         display: block;
-        max-height: 40px;
+        max-height: 50px;
         width: auto;
     }
 

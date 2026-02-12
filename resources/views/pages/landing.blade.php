@@ -590,10 +590,10 @@
         }
 
         /* .combined-grid {
-                                    display: grid;
-                                    grid-template-columns: 1fr 1.2fr;
-                                    gap: 3rem;
-                                } */
+                                                        display: grid;
+                                                        grid-template-columns: 1fr 1.2fr;
+                                                        gap: 3rem;
+                                                    } */
 
         .left-column {
             display: flex;
@@ -907,11 +907,6 @@
                 padding: 1.5rem;
             }
 
-            .featured-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
 
             .side-popular-card {
                 flex-direction: column;
@@ -1065,13 +1060,16 @@
                                     </div>
                                     <h2 class="section-title">Berita Unggulan</h2>
                                 </div>
-                                <a href="{{ route('news.index') }}" class="btn-view-all">
-                                    Lihat Semua
-                                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                        <path fill-rule="evenodd"
-                                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                                    </svg>
-                                </a>
+                                <div>
+                                    <a href="{{ route('news.index') }}" class="btn-view-all">
+                                        Lihat Semua
+                                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd"
+                                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                        </svg>
+                                    </a>
+                                </div>
+
                             </div>
 
                             <div class="featured-grid">

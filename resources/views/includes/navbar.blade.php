@@ -6,7 +6,7 @@
             <div class="logo-wrapper-nav">
                 <a href="{{ route('landing') }}" class="logo-link">
                     <div class="logo-container">
-                        <img id="logo_navbar" src="{{ asset('/asset/img/logo.png') }}" alt="Logo">
+                        <img id="logo_navbar" src="{{ asset('/asset/img/Sobat_Terkini.png') }}" alt="Logo">
                     </div>
                 </a>
 
@@ -120,8 +120,9 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 1rem 0;
-        gap: 2rem;
+        height: 72px;
+        /* tinggi navbar tetap */
+        padding: 0;
     }
 
     /* Logo Section */
@@ -144,13 +145,13 @@
     }
 
     .logo-container {
+        height: 100%;
         display: flex;
         align-items: center;
-        padding: 0.35rem 0;
     }
 
     #logo_navbar {
-        height: 40px;
+        height: 80px;
         width: auto;
         display: block;
         transition: transform 0.3s ease;
