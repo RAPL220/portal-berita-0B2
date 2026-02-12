@@ -198,7 +198,7 @@
     .nav-menu-wrapper {
         flex: 1;
         display: flex;
-        justify-content: center;
+        justify-content: start;
     }
 
     .nav-menu {

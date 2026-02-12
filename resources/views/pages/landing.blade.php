@@ -590,10 +590,10 @@
         }
 
         /* .combined-grid {
-                                                        display: grid;
-                                                        grid-template-columns: 1fr 1.2fr;
-                                                        gap: 3rem;
-                                                    } */
+                                                            display: grid;
+                                                            grid-template-columns: 1fr 1.2fr;
+                                                            gap: 3rem;
+                                                        } */
 
         .left-column {
             display: flex;
@@ -604,6 +604,7 @@
         .right-column {
             display: flex;
             flex-direction: column;
+            width: 100%
         }
 
         .popular-grid {
